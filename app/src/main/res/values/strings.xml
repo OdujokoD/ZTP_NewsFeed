@@ -4,4 +4,13 @@
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
     <string name="title_activity_main2">Main2Activity</string>
+    <string name="label_popular">Popular</string>
+    <string name="label_your_feed">Your Feed</string>
+    <string name="bullet">&#8226;</string>
+    <string name="home_icon">Home icon</string>
+    <string name="user_avatar">User Avatar</string>
+    <string name="like_button">Like button</string>
+    <string name="comment_button">Comment button</string>
+    <string name="share_button">Share button</string>
+    <string name="background_image">Background Image</string>
 </resources>
