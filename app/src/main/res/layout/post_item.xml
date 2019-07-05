@@ -5,50 +5,24 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <ImageView
-        android:id="@+id/iv_background"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:contentDescription="@string/background_image"
-        tools:srcCompat="@tools:sample/avatars[4]" />
+    <!--<ImageView-->
+        <!--android:id="@+id/iv_background"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:contentDescription="@string/background_image"-->
+        <!--tools:srcCompat="@tools:sample/avatars[4]" />-->
 
-    <android.support.constraint.ConstraintLayout
+    <com.google.android.exoplayer2.ui.PlayerView
+        android:id="@+id/player_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:resize_mode="zoom"
+        app:use_controller="false"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginBottom="90dp">
-        <TextView
-            android:id="@+id/label_feed"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/label_your_feed"
-            android:textColor="@color/white"
-            android:textSize="18sp"
-            android:fontFamily="@font/walshiem"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/bullet"
-            android:textColor="@color/white"
-            android:textSize="18sp"
-            android:fontFamily="@font/walshiem"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintLeft_toLeftOf="@id/label_feed"
-            app:layout_constraintRight_toRightOf="@id/label_popular"/>
-
-        <TextView
-            android:id="@+id/label_popular"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/label_popular"
-            android:textColor="@color/white"
-            android:textSize="18sp"
-            android:fontFamily="@font/walshiem"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintLeft_toRightOf="@id/label_feed"
-            app:layout_constraintRight_toRightOf="parent"/>
 
         <TextView
             android:id="@+id/tv_user_name"
@@ -129,7 +103,7 @@
                 android:background="@drawable/ic_share" />
         </LinearLayout>
 
-    </android.support.constraint.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </FrameLayout>

@@ -1,12 +1,15 @@
 package com.odujokod.ztp_newsfeed.view;
 
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.util.Log;
-import android.widget.TextView;
+import android.view.View;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.LinearSnapHelper;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.SnapHelper;
 
 import com.odujokod.ztp_newsfeed.R;
 import com.odujokod.ztp_newsfeed.adapter.PostAdapter;
@@ -37,8 +40,25 @@ public class MainActivity extends AppCompatActivity {
 
         postAdapter = new PostAdapter();
         recyclerView.setAdapter(postAdapter);
-
         fetchPosts();
+
+
+        final SnapHelper snapHelper = new LinearSnapHelper();
+        snapHelper.attachToRecyclerView(recyclerView);
+
+//        recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+//            @Override
+//            public void onScrollStateChanged(@NonNull RecyclerView recyclerView, int newState) {
+//                super.onScrollStateChanged(recyclerView, newState);
+//
+//                if(newState == RecyclerView.SCROLL_STATE_IDLE) {
+//                    View centerView = snapHelper.findSnapView(layoutManager);
+//                    int pos =  layoutManager.getPosition(centerView);
+//                    Log.d("Snapped Item Position:",""+pos);
+//                    postAdapter.releasePlayer();
+//                }
+//            }
+//        });
     }
 
     private void fetchPosts() {
